@@ -59,3 +59,12 @@ Thumbs.db
 # Vue
 /frontend/dist
 
+# Nuxt
+/frontend/.nuxt
+/frontend/.output
+
+# SSL certificates (never commit)
+nginx/ssl/*.pem
+nginx/ssl/*.crt
+nginx/ssl/*.key
+

@@ -86,9 +86,15 @@ export const useAuthStore = defineStore('auth', {
         })
 
         this.accessToken = data.access
-        
+        if (data.refresh) {
+          this.refreshToken = data.refresh
+        }
+
         if (process.client) {
           localStorage.setItem('access_token', data.access)
+          if (data.refresh) {
+            localStorage.setItem('refresh_token', data.refresh)
+          }
         }
       } catch (error) {
         this.logout()
