@@ -1,9 +1,9 @@
-# Makefile for Rapid Django Vue
+# Makefile for Rapid Django Nuxt
 
 .PHONY: help build up down restart logs migrate makemigrations createsuperuser shell test clean
 
 help:
-	@echo "Rapid Django Vue - Available commands:"
+	@echo "Rapid Django Nuxt - Available commands:"
 	@echo "  make build          - Build Docker containers"
 	@echo "  make up             - Start all services"
 	@echo "  make down           - Stop all services"
@@ -13,7 +13,7 @@ help:
 	@echo "  make makemigrations - Create Django migrations"
 	@echo "  make createsuperuser - Create Django superuser"
 	@echo "  make shell          - Open Django shell"
-	@echo "  make test           - Run tests"
+	@echo "  make test           - Run backend tests"
 	@echo "  make clean          - Remove containers and volumes"
 
 build:
@@ -22,8 +22,9 @@ build:
 up:
 	docker-compose up -d
 	@echo "Services started!"
-	@echo "Frontend: http://localhost:8080"
-	@echo "Backend: http://localhost:8000"
+	@echo "Frontend: http://localhost:3000"
+	@echo "Backend:  http://localhost:8000"
+	@echo "Admin:    http://localhost:8000/admin"
 
 down:
 	docker-compose down
@@ -48,9 +49,7 @@ shell:
 
 test:
 	docker-compose exec backend python manage.py test
-	docker-compose exec frontend npm run test
 
 clean:
 	docker-compose down -v
 	@echo "Cleaned up containers and volumes"
-

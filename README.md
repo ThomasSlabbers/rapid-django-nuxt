@@ -6,7 +6,7 @@ A modern, production-ready boilerplate for building web applications with Django
 
 ## Features
 
-- **Django 4.2** - Modern Python web framework
+- **Django 5.2** - Modern Python web framework
 - **Django REST Framework** - Powerful toolkit for building Web APIs
 - **Nuxt 3** - The Intuitive Vue Framework with SSR/SSG support
 - **JWT Authentication** - Secure token-based authentication with djangorestframework-simplejwt
@@ -172,7 +172,7 @@ The `.env.example` file contains inline comments explaining which values to use 
 | `DEBUG` | Django debug mode | `True` | `False` |
 | `SECRET_KEY` | Django secret key | Default OK | Generate strong key |
 | `ALLOWED_HOSTS` | Allowed hostnames | `*` | `yourdomain.com` |
-| `DB_NAME` | Database name | `rapid_django_vue` | `rapid_django_vue` |
+| `DB_NAME` | Database name | `rapid_django_nuxt` | `rapid_django_nuxt` |
 | `DB_USER` | Database user | `postgres` | `postgres` |
 | `DB_PASSWORD` | Database password | `postgres` | Strong password |
 | `DB_HOST` | Database host | `db` | `db` |
@@ -210,7 +210,7 @@ curl -X POST http://localhost:8000/api/auth/register/ \
 curl -X POST http://localhost:8000/api/auth/login/ \
   -H "Content-Type: application/json" \
   -d '{
-    "username": "testuser",
+    "username_or_email": "testuser",
     "password": "securepassword123"
   }'
 ```
@@ -222,7 +222,7 @@ curl -X POST http://localhost:8000/api/auth/login/ \
 ```env
 DEBUG=True
 SECRET_KEY=your-secret-key
-DB_NAME=rapid_django_vue
+DB_NAME=rapid_django_nuxt
 DB_USER=postgres
 DB_PASSWORD=postgres
 DB_HOST=db
@@ -259,18 +259,18 @@ docker-compose -f docker-compose.prod.yml up --build -d
 ## Technology Stack
 
 ### Backend
-- Python 3.11
-- Django 4.2
-- Django REST Framework 3.14
-- djangorestframework-simplejwt 5.3
+- Python 3.12
+- Django 5.2
+- Django REST Framework 3.15
+- djangorestframework-simplejwt 5.4
 - PostgreSQL 15
-- django-cors-headers 4.3
+- django-cors-headers 4.6
 
 ### Frontend
-- Node.js 18
-- Nuxt 3.8
-- Vue 3.3
-- Pinia 2.1
+- Node.js 20
+- Nuxt 3.16
+- Vue 3.5
+- Pinia 2.3
 - TypeScript
 
 ## Common Commands
